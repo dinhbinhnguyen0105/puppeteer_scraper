@@ -7,7 +7,7 @@ function createMainWindow() {
     height: 600,
     webPreferences: {
         preload: path.join(process.cwd(), "main", "preload.js"),
-        contextIsolation: true, // cô lập ngữ cảnh (Để lấy được path trong file)
+        contextIsolation: true, // cô lập ngữ cảnh để bảo mật
         enableBlinkFeatures: false, // Remote module
         nodeIntegration: false // tắt nodeIntegration để bảo mật
     }
