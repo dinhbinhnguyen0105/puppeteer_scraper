@@ -6,5 +6,9 @@ contextBridge.exposeInMainWorld("electronAPIs", {
             const filePath = webUtils.getPathForFile(args.file);
             ipcRenderer.send("selected-directory", { filePath });
         }
+        if(channel == "crawl" && args.userDataDir) {
+            const userDataDir = webUtils.getPathForFile(args.userDataDir);
+            ipcRenderer.send("crawl")
+        }
     },
 });
