@@ -42,7 +42,8 @@ puppeteer.use(StealthPlugin());
         })
         .then(async ({ articleElm, creatorId, storyId, messageId, imgId, interactionsId, commentCountId }) => {
             const creatorElm = await articleElm.$(`[id="${creatorId}"]`);
-            console.log(creatorElm.getProperty("textContent").getValue());
+            
+            // console.log(creatorElm.getProperty("textContent").getValue());
         })
         .catch(error => {
             console.error("Lỗi:", error.message);
