@@ -11,10 +11,10 @@ const userDataDir = "/Users/ndb/Library/Application Support/Google/Chrome/Defaul
     puppeteer.launch({
         headless: false,
         devtools: true,
-        // executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-        // userDataDir: "/Users/dinhbinh/Workspace/mymanager-v2/bin/browsers/61566863008632",
-        executablePath: executablePath,
-        userDataDir: userDataDir,
+        executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        userDataDir: "/Users/dinhbinh/Workspace/mymanager-v2/bin/browsers/61566863008632",
+        // executablePath: executablePath,
+        // userDataDir: userDataDir,
     })
         .then(async browser => {
             console.log('Running tests..');

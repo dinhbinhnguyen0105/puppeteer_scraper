@@ -8,7 +8,12 @@ contextBridge.exposeInMainWorld("electronAPIs", {
         }
         if(channel == "crawl" && args.userDataDir) {
             const userDataDir = webUtils.getPathForFile(args.userDataDir);
-            ipcRenderer.send("crawl")
+            ipcRenderer.send("crawl", {
+                userDataDir,
+                groupUrl: args.groupUrl,
+                count: parseInt(args.count),
+                keywords: args.keywords.split(" "),
+            });
         }
     },
 });

@@ -22,7 +22,10 @@ app.whenReady().then(() => {
     })
     
     ipcMain.on("selected-directory", (event, args) => {
-        const selectedDir = args.filePath.substring(0, args.filePath.lastIndexOf(path.sep));
+        const selectedDir = args.userDataDir.substring(0, args.userDataDir.lastIndexOf(path.sep));
         console.log(selectedDir);
+    });
+    ipcMain.on("crawl", (event, args) => {
+        console.log(args);
     });
 });
